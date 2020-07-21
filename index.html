@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+      // let the computer pick
+      function computerPlay() {
+          const OPTIONS = [
+              "rock",
+              "paper",
+              "scissors"
+          ];
+          return OPTIONS[Math.floor(Math.random() * OPTIONS.length)];
+      }
+
+      // play a round
+      function playRound(playerSelection, computerSelection) {
+          if (playerSelection === "rock") {
+              switch (computerSelection) {
+                    case "rock":
+                        console.log("Tie game.");
+                        break;
+                    case "paper":
+                        console.log("You lose.");
+                        break;
+                    case "scissors":
+                        console.log("You win!");
+              }
+
+          } else if (playerSelection === "paper") {
+              switch (computerSelection) {
+                    case "rock":
+                        console.log("You win!");
+                        break;
+                    case "paper":
+                        console.log("Tie game.");
+                        break;
+                    case "scissors":
+                        console.log("You lose.");
+              }
+
+          } else {
+              switch (computerSelection) {
+                    case "rock":
+                        console.log("You lose.");
+                        break;
+                    case "paper":
+                        console.log("You win!");
+                        break;
+                    case "scissors":
+                        console.log("Tie game.");
+              }
+
+          }
+      }
+
+      // run this function in console to play
+      function game() {
+          for (i=0; i<5; i++) {
+            let computerSelection = computerPlay();
+            
+            let playerSelection = prompt("Game " + (i+1) + " of 5: Rock, paper, or scissors?");
+
+            playerSelection = playerSelection.toLowerCase();
+
+            console.log("Game " + (i+1) + ": The computer chose " + computerSelection + ". You chose " + playerSelection + ".");
+
+            if (playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors" ) {
+                playRound(playerSelection, computerSelection);
+            } else {
+                console.log("Sorry that is not a valid play. Try again.")
+                i = i - 1;
+            }
+          }
+      }
+
+  </script>
+</body>
+</html>
