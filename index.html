@@ -72,11 +72,11 @@
             } else {
                 let computerSelection = computerPlay();
                 
-                let playerSelection = prompt("Best of 5. Game " + (i+1) + ". Rock, paper, or scissors?");
+                let playerSelection = prompt("Best of 5. Round " + (i+1) + ". Rock, paper, or scissors?");
 
                 playerSelection = playerSelection.toLowerCase();
 
-                console.log("Game " + (i + 1) + ": The computer chose " + computerSelection + ". You chose " + playerSelection + ".");
+                console.log("Round " + (i + 1) + ": The computer chose " + computerSelection + ". You chose " + playerSelection + ".");
 
                 if (playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors" ) {
                     winner = playRound(playerSelection, computerSelection);
@@ -97,9 +97,9 @@
           }
 
           if (playerScore >= 3) {
-              console.log("You were first to win 3!")
+              console.log("You win the game! You were the first to win 3!")
           } else {
-              console.log("You lost. Computer won 3 games first.")
+              console.log("You lost the game. The computer won 3 rounds first.")
           }
       }
 
